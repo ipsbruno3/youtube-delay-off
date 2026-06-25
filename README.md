@@ -17,7 +17,7 @@ Muitas transmissões ao vivo não rodam em modo de baixa latência.
 
 Na prática, o player pode ficar 15, 20, 30 ou até 45 segundos atrás do ponto real da transmissão.
 
-Às vezes o usuário nem percebe. A live continua tocando, o botão mostra “ao vivo”, mas o vídeo já ficou para trás.
+Às vezes o usuário nem percebe. A live continua tocando, o botão mostra “em direto” cinza, mas o vídeo já ficou para trás e você precisa ficar dando F5 (UX do YouTube é horrível neste ponto)
 
 Isso é especialmente ruim em:
 
