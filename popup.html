@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>YouTube Delay Off</title>
+  </head>
+  <body>
+    <header class="hdr">
+      <img src="icons/icon48.png" alt="" class="logo" />
+      <div class="hdr-txt">
+        <h1>Delay Off</h1>
+        <span class="sub">Sincronizador de live</span>
+      </div>
+    </header>
+
+    <!-- Cartão de estado (brilha quando dessincronizado) -->
+    <section id="card" class="card" data-state="loading">
+      <div class="card-top">
+        <span class="dot"></span>
+        <span id="state-label" class="state-label">Verificando…</span>
+      </div>
+      <div id="state-value" class="state-value">—</div>
+      <div id="state-hint" class="state-hint"></div>
+      <div class="card-actions">
+        <button id="btn-sync" class="btn btn-primary">Sincronizar agora</button>
+        <button id="btn-live" class="btn btn-ghost">Ir ao vivo</button>
+      </div>
+    </section>
+
+    <!-- Opções -->
+    <section class="opts">
+      <label class="row">
+        <div class="row-txt">
+          <span class="row-title">Sincronizar automaticamente</span>
+          <span class="row-desc">Acelera ao detectar atraso na live</span>
+        </div>
+        <span class="switch"><input type="checkbox" id="opt-auto" /><i></i></span>
+      </label>
+
+      <label class="row">
+        <div class="row-txt">
+          <span class="row-title">Reduzir latência</span>
+          <span class="row-desc"
+            >Mantém o limiar o mais baixo possível, interferindo no tempo de
+            buffer entre o canal e o navegador para latência mínima —
+            tipicamente abaixo de 5 segundos.</span
+          >
+        </div>
+        <span class="switch"
+          ><input type="checkbox" id="opt-lowlat" /><i></i
+        ></span>
+      </label>
+
+      <label class="row">
+        <div class="row-txt">
+          <span class="row-title">Velocidade de recuperação</span>
+          <span class="row-desc">Quão rápido alcança o AO VIVO</span>
+        </div>
+        <select id="opt-rate" class="select">
+          <option value="1.25">1.25x</option>
+          <option value="1.5">1.5x</option>
+          <option value="1.75">1.75x</option>
+          <option value="2" selected>2x</option>
+        </select>
+      </label>
+
+      <label class="row">
+        <div class="row-txt">
+          <span class="row-title">Fixar qualidade</span>
+          <span class="row-desc">Trava a resolução (só em lives)</span>
+        </div>
+        <span class="switch"><input type="checkbox" id="opt-fq" /><i></i></span>
+      </label>
+
+      <label class="row" id="row-quality">
+        <div class="row-txt">
+          <span class="row-title">Resolução</span>
+          <span class="row-desc">Aplicada nas lives · padrão 720p</span>
+        </div>
+        <select id="opt-quality" class="select">
+          <option value="hd2160">2160p (4K)</option>
+          <option value="hd1440">1440p</option>
+          <option value="hd1080">1080p</option>
+          <option value="hd720" selected>720p</option>
+          <option value="large">480p</option>
+          <option value="medium">360p</option>
+          <option value="small">240p</option>
+          <option value="auto">Automático</option>
+        </select>
+      </label>
+    </section>
+
+    <footer class="ftr">
+      <span id="foot">Abra uma live no YouTube</span>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

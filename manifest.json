@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Delay Off — Sincronizador de Live",
+  "short_name": "Delay Off",
+  "version": "1.0.0",
+  "description": "Reduz o atraso em lives do YouTube mantendo o player mais próximo do AO VIVO.",
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Delay Off",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "permissions": ["storage"],
+
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["src/inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": [
+        "src/core.js",
+        "src/bridge.js",
+        "src/catchup.js",
+        "src/ui.js",
+        "src/content.js"
+      ],
+      "css": ["src/overlay.css"],
+      "run_at": "document_idle",
+      "world": "ISOLATED"
+    }
+  ]
+}

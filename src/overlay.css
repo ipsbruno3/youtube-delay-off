@@ -1,0 +1,120 @@
+/* ============ Timer ao lado do botão "Em direto" ============ */
+.ydo-timer {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0 9px !important;
+  width: auto !important;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  vertical-align: top;
+  opacity: 0.92;
+  transition: opacity 0.15s ease;
+}
+.ydo-timer:hover {
+  opacity: 1;
+}
+.ydo-timer .ydo-timer-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff2d46;
+  box-shadow: 0 0 0 0 rgba(255, 45, 70, 0.6);
+}
+.ydo-timer[data-state="live"] .ydo-timer-icon {
+  background: #ff2d46;
+  animation: ydo-pulse 1.6s infinite;
+}
+.ydo-timer[data-state="catching"] {
+  color: #ffd24d;
+}
+.ydo-timer[data-state="catching"] .ydo-timer-icon {
+  background: #ffd24d;
+  border-radius: 1px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #ffd24d;
+  box-shadow: none;
+}
+.ydo-timer[data-state="delayed"] {
+  color: #ff8a8a;
+}
+.ydo-timer[data-state="delayed"] .ydo-timer-icon {
+  background: #9aa0a6;
+  box-shadow: none;
+}
+
+/* ============ Ponto AO VIVO no canto (vale em tela cheia) ============ */
+.ydo-overlay {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2147483000; /* acima dos controles e da tela cheia */
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px 5px 9px;
+  border-radius: 999px;
+  background: rgba(15, 15, 18, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: #fff;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+.ydo-overlay .ydo-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff2d46;
+  box-shadow: 0 0 8px rgba(255, 45, 70, 0.9);
+}
+.ydo-overlay[data-state="live"] .ydo-dot {
+  animation: ydo-pulse 1.6s infinite;
+}
+.ydo-overlay[data-state="catching"] {
+  color: #ffd24d;
+}
+.ydo-overlay[data-state="catching"] .ydo-dot {
+  background: #ffd24d;
+  box-shadow: 0 0 8px rgba(255, 210, 77, 0.9);
+  animation: ydo-blink 0.7s steps(2) infinite;
+}
+.ydo-overlay[data-state="delayed"] {
+  color: #f1f1f1;
+  background: rgba(15, 15, 18, 0.6);
+}
+.ydo-overlay[data-state="delayed"] .ydo-dot {
+  background: #9aa0a6;
+  box-shadow: none;
+}
+
+@keyframes ydo-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 45, 70, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(255, 45, 70, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 45, 70, 0);
+  }
+}
+@keyframes ydo-blink {
+  to {
+    opacity: 0.35;
+  }
+}
