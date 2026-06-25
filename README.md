@@ -44,9 +44,7 @@ Também há proteção para evitar acelerar quando o buffer está baixo demais.
 
 
 ## Resultado
-
-<img width="957" height="682" alt="Comparação de latência glass-to-glass" src="https://github.com/user-attachments/assets/f58a68f9-1af6-48f7-89f9-5043fc9681af" />
-
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/6ef629c4-416c-4902-9019-a01343c60156" />
 
 Os números variam bastante, mas em alguns cenários o Delay Off consegue aproximar uma live comum do YouTube da faixa de atraso de uma TV aberta digital.
 
