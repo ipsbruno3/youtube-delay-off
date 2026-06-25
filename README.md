@@ -179,9 +179,13 @@ Funciona em lives do YouTube compatíveis com o player HTML5.
 
 Porque reduz a chance de tomar spoiler de gol pelo chat, vizinho, notificação ou rede social.
 
-### Como instalar?
+### Como instalar? (modo desenvolvedor)
 
-Baixe o zip e carregue a extensão descompactada em seu browser favorito. Ainda não dispomos na loja Chrome Web Store
+1. Baixe o zip e descompacte ele em uma pasta 
+2. Abra `chrome://extensions` (ou `edge://extensions`).
+3. Ative o **Modo do desenvolvedor** (canto superior direito).
+4. Clique em **Carregar sem compactação** e selecione esta pasta 
+5. Abra uma transmissão **ao vivo** no YouTube.
 
 
 
